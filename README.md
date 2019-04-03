@@ -12,13 +12,13 @@ Tested on Ubuntu 16.04, ROS Kinetic, Boost 1.58
 2. `catkin_make` and source `devel/setup.bash`
 
 ### Add the map and insert the plugin
-1. Add your world file to world folder
+1. Add your world file to THE PACKAGE's world folder
 2. Add this line at the end of the world file, before `</world>` tag:
-`<plugin filename="libcollision_map_creator.so" name="collision_map_creator"/>`
+`<plugin filename="libcollision_map_creator.so" name="collision_map_creator"/>`,Make sure you specify the absolute path to the library so gazebo knows how to find it, unless the lib is at the same directory with the world.使用绝对路径.不知道在哪里可以先搜索找到路径.
 
 ### Create the pgm map file
 1. Open a terminal, run gzerver with the map file
-`gzserver src/pgm_map_creator/world/<map file>`
+`gzserver src/pgm_map_creator/world/target_world_file_name.word`,出现 Subscribing to: ~/collision_map/command 则表明正常运行.
 2. Open another terminal, launch the request_publisher node
 `roslaunch pgm_map_creator request_publisher.launch`
 3. Wait for the plugin to generate map. It will be located in the map folder
