@@ -1,6 +1,6 @@
 # pgm_map_creator
 Create pgm map from Gazebo world file for ROS localization
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+## [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 ## Environment
 Tested on Ubuntu 16.04, ROS Kinetic, Boost 1.58
 
