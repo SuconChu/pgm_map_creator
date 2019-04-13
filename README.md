@@ -26,20 +26,19 @@ Make sure you specify the absolute path to the library so gazebo knows how to fi
 ## 中文
 
 编辑 msgs/CMakeLists.txt
-	set (msgs
-	  collision_map_request.proto
+	set (msgs  collision_map_request.proto
 	  ${PROTOBUF_IMPORT_DIRS}/vector2d.proto
 	  ${PROTOBUF_IMPORT_DIRS}/header.proto
 	  ${PROTOBUF_IMPORT_DIRS}/time.proto
 	)
-	改为
+改为
 	set (msgs
 	  collision_map_request.proto
 	)
 
-重新 catkin_make
+重新 'catkin_make'
 
-编辑 *.world 文件,在</world>前 添加插件 <plugin filename="/home/z/creator/devel/lib/libcollision_map_creator.so" name="collision_map_creator"/>
+编辑 *.world 文件,在`</world>`前 添加插件 <plugin filename="/home/z/creator/devel/lib/libcollision_map_creator.so" name="collision_map_creator"/>
 要使用绝对路径
 
 打开一个终端
