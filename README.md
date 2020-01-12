@@ -4,7 +4,7 @@ Create pgm map from Gazebo world file for ROS localization
 Tested on Ubuntu 16.04, ROS Kinetic, Boost 1.58
 
 ## Usage
-
+###中文为准
 ### Add the package to your workspace
 0. Create a catkin workspace `creator`
 1. Clone the package to the src folder
@@ -25,7 +25,10 @@ Make sure you specify the absolute path to the library so gazebo knows how to fi
 
 ## 中文
 
-编辑 msgs/CMakeLists.txt
+###编辑文件
+已更改，无需再改
+
+msgs/CMakeLists.txt
 	`set (msgs  collision_map_request.proto
 	  ${PROTOBUF_IMPORT_DIRS}/vector2d.proto
 	  ${PROTOBUF_IMPORT_DIRS}/header.proto
@@ -35,19 +38,22 @@ Make sure you specify the absolute path to the library so gazebo knows how to fi
 	`set (msgs
 	  collision_map_request.proto
 	)`
-已更改，无需再改
 
-重新 `catkin_make`
 
-编辑 *.world 文件,在`</world>`前 添加插件 <plugin filename="/home/z/creator/devel/lib/libcollision_map_creator.so" name="collision_map_creator"/>
-要使用绝对路径
+###编译  `catkin_make`
 
+###export环境变量 `source ~/creator/devel/setup.bash`
+
+###编辑 *.world 文件
+在`</world>`前 添加插件 `<plugin filename="/home/z/creator/devel/lib/libcollision_map_creator.so" name="collision_map_creator"/>`,要使用绝对路径
+
+###创建pgm文件
 打开一个终端
-gzserver ~/creator/src/pgm_map_creator/world/udacity_mtv
-出现 Subscribing to: ~/collision_map/command 则表明正常运行
+`gzserver ~/creator/src/pgm_map_creator/world/udacity_mtv`
+出现 `Subscribing to: ~/collision_map/command` 则表明正常运行
 
 再打开一个终端
-roslaunch pgm_map_creator request_publisher.launch
+`roslaunch pgm_map_creator request_publisher.launch`
 
 
 export环境变量
