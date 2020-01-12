@@ -35,7 +35,7 @@ Make sure you specify the absolute path to the library so gazebo knows how to fi
 	`set (msgs
 	  collision_map_request.proto
 	)`
-
+已更改，无需再改
 重新 `catkin_make`
 
 编辑 *.world 文件,在`</world>`前 添加插件 <plugin filename="/home/z/creator/devel/lib/libcollision_map_creator.so" name="collision_map_creator"/>
