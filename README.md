@@ -36,6 +36,7 @@ Make sure you specify the absolute path to the library so gazebo knows how to fi
 	  collision_map_request.proto
 	)`
 已更改，无需再改
+
 重新 `catkin_make`
 
 编辑 *.world 文件,在`</world>`前 添加插件 <plugin filename="/home/z/creator/devel/lib/libcollision_map_creator.so" name="collision_map_creator"/>
@@ -49,7 +50,7 @@ gzserver ~/creator/src/pgm_map_creator/world/udacity_mtv
 roslaunch pgm_map_creator request_publisher.launch
 
 
-
+export环境变量
 Lastly, don't forget to export the environment variable as suggested in the tutorial
 `export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:collision_map_creator_plugin/build`
 
